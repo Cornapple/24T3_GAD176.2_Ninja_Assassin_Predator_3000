@@ -5,7 +5,7 @@ using UnityEngine;
 
 /// <summary>
 /// This class defines specific characteristics about the camera 
-/// </summary>
+/// </summary
 public class MotionCameraSystem : MonoBehaviour, IScanner
 {
     #region CameraVariables
@@ -28,6 +28,9 @@ public class MotionCameraSystem : MonoBehaviour, IScanner
 
 
     #endregion
+
+
+    [SerializeField] private float lineLength;
 
     private void Update()
     {
@@ -75,5 +78,17 @@ public class MotionCameraSystem : MonoBehaviour, IScanner
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        // Aaran gave an example of line detection
 
+        //Gizmos.color = Color.cyan;
+
+        //Gizmos.DrawLine(transform.position, transform.position + transform.forward * lineLength);
+        //Gizmos.DrawLine(transform.position, transform.position + transform.forward * lineLength + Vector3.up);
+        //Gizmos.DrawLine(transform.position, transform.position + transform.forward * lineLength + Vector3.down);
+        //Gizmos.DrawLine(transform.position, transform.position + transform.forward * lineLength + Vector3.left);
+        //Gizmos.DrawLine(transform.position, transform.position + transform.forward * lineLength + Vector3.right);
+        //Gizmos.DrawLine(transform.position, transform.position + transform.forward * lineLength + Vector3.right + Vector3.up);
+    }
 }

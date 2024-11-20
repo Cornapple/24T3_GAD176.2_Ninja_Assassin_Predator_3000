@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MotionCameraSystem : MonoBehaviour
+/// <summary>
+/// This class defines specific characteristics about the camera 
+/// </summary>
+public class MotionCameraSystem : MonoBehaviour, IScanner
 {
-    [SerializeField] private Vector3 cameraHeadPosition;
+    #region CameraVariables
 
-    [SerializeField] private Transform restingPosition;
+    [SerializeField] private Vector3 cameraHeadPosition; // used to rotate the camera
+
+    [SerializeField] private Transform restingPosition; // used to detect SignedAngle 
 
     [Tooltip("Keep as negative number")]
     [SerializeField] private float maxRightRotationAngle; // should be a negative number (Allows custom inputs to rotation angle)
@@ -15,16 +20,19 @@ public class MotionCameraSystem : MonoBehaviour
     [Tooltip("Keep as positive number")]
     [SerializeField] private float maxLeftRotationAngle; // should be a positive number (Allows custom inputs to rotation angle)
 
-    [SerializeField] private float cameraSpeed;
+    [SerializeField] private float cameraSpeed; // can change speed of rotating camera
 
-    [SerializeField] private float angleFromRestingPosition;
+    [SerializeField] private float angleFromRestingPosition; // gets the angle from the original resting position to where the camera currently is
 
-    [SerializeField] private bool maxRightRotation = false;
+    [SerializeField] private bool maxRightRotation = false; // detects max rotation angles
 
+
+    #endregion
 
     private void Update()
     {
         CameraRotation();
+
     }
     private void CameraRotation() // camera will automatically move right to left (Scanning) using angles and vector math
     {
@@ -58,4 +66,14 @@ public class MotionCameraSystem : MonoBehaviour
 
 
     }
+
+    public void OnTriggerEnter(Collider collision)
+    {
+        if (collision.transform.GetComponent<CameraTrigger>())
+        {
+            Debug.Log("Camera has been triggered");
+        }
+    }
+
+
 }

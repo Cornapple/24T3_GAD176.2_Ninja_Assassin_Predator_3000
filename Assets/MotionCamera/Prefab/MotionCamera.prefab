@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 6596675415925804959}
   - component: {fileID: 4227972380713346979}
   - component: {fileID: 450133951018561986}
+  - component: {fileID: 1733172536853989855}
   m_Layer: 0
   m_Name: Camera_Pivot
   m_TagString: Untagged
@@ -345,6 +346,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6796424350429854897}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!136 &1733172536853989855
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796424350429854897}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 45.042477
+  m_Height: 90.08495
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9994782, z: 44.54248}
 --- !u!1 &6859909413701608367
 GameObject:
   m_ObjectHideFlags: 0

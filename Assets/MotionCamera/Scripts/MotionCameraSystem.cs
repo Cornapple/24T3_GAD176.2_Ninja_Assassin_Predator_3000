@@ -5,7 +5,7 @@ using UnityEngine;
 
 /// <summary>
 /// This class defines specific characteristics about the camera 
-/// </summary
+/// <summary>
 public class MotionCameraSystem : MonoBehaviour, IScanner
 {
     #region CameraVariables

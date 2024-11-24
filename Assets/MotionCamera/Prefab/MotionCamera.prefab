@@ -296,6 +296,10 @@ MonoBehaviour:
   cameraSpeed: 0.5
   angleFromRestingPosition: 0
   maxRightRotation: 0
+  lineLength: 10
+  raycastPhysicsLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!23 &4227972380713346979
 MeshRenderer:
   m_ObjectHideFlags: 0

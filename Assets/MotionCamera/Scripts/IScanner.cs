@@ -6,10 +6,13 @@ using UnityEngine;
 /// <summary>
 /// This class gives instructions on scannable objects
 /// </summary>
-public interface IScanner
+namespace Stealth.Framework.Motion.Camera
 {
+    public interface IScanner
+    {
+        
 
-
+    }
 }
 
 

@@ -1230,6 +1230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6596675415925804959, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
+      propertyPath: raycastDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596675415925804959, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
+        type: 3}
       propertyPath: maxRightRotation
       value: 0
       objectReference: {fileID: 0}
@@ -1260,8 +1265,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7817435488457327366, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.019
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817435488457327366, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
+        type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.108
+      value: -0.118
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817435488457327366, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.386
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

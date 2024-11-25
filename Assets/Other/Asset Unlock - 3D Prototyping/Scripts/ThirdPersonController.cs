@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
@@ -15,10 +16,16 @@ public class ThirdPersonController : MonoBehaviour
     private bool groundedPlayer;
     private float gravityValue = -9.81f;
 
+    // call the prone script, attaching it to the third person controller
+    public ProneMovement proneMovement;
+
     private void Start()
     {
         m_Controller = gameObject.GetComponent<CharacterController>();
         m_Animator = gameObject.GetComponentInChildren<Animator>();
+
+
+
     }
 
     void Update()
@@ -61,5 +68,12 @@ public class ThirdPersonController : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
 
         m_Controller.Move(playerVelocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.RightShift) && groundedPlayer)
+        {
+            // call the GoProne method
+            proneMovement.GoProne();
+        }
+
     }
 }

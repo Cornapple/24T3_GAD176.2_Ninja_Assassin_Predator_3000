@@ -45,12 +45,18 @@ namespace Stealth.Framework.Motion.Camera
             DetectionEvent.OnDetectionEvent -= CameraTriggerEvent;
         }
 
+        private void CameraTriggerEvent() // define custom event logic here
+        {
+            Debug.Log("Custom Camera Event has been Triggered");
+        }
+
         private void Start()
         {
             transform.LookAt(restingPosition); // allows moving of camera resting position - enabling easy custom camera angles from start position
+
         }
 
-        public void Update()
+        private void Update()
         {
             CameraRotation();
 
@@ -58,9 +64,8 @@ namespace Stealth.Framework.Motion.Camera
 
         }
 
-        private void CameraRotation() // camera will automatically move right to left (Scanning) using angles and vector math
+        public void CameraRotation()
         {
-
             Vector3 directionToRestingPosition = restingPosition.position - transform.position;
 
             angleFromRestingPosition = Vector3.SignedAngle(transform.forward, directionToRestingPosition, Vector3.up);
@@ -87,11 +92,9 @@ namespace Stealth.Framework.Motion.Camera
                     maxRightRotation = false;
                 }
             }
-
-
         }
 
-        private void CameraSight() // cameras vision detection area
+        public void CameraSight()
         {
             RaycastHit cameraFound;
 
@@ -108,14 +111,6 @@ namespace Stealth.Framework.Motion.Camera
                     DetectionEvent.OnDetectionEvent?.Invoke(); // calling custom event once trigger has been found
                 }
             }
-
         }
-
-        private void CameraTriggerEvent() // define custom event logic here
-        {
-            Debug.Log("Custom Camera Event has been Triggered");
-        }
-
-       
     }
 }

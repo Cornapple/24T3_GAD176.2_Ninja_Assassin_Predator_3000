@@ -10,7 +10,9 @@ namespace Stealth.Framework.Motion.Camera
 {
     public interface IScanner
     {
-        
+        void CameraRotation();
+
+        void CameraSight();
 
     }
 }

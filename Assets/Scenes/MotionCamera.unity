@@ -1191,27 +1191,27 @@ PrefabInstance:
     - target: {fileID: 5823399671135827732, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9902306
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5823399671135827732, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5823399671135827732, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.13943917
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5823399671135827732, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5823399671135827732, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 16.031
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6596675415925804959, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
@@ -1226,7 +1226,7 @@ PrefabInstance:
     - target: {fileID: 6596675415925804959, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: cameraSpeed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6596675415925804959, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
@@ -1246,17 +1246,17 @@ PrefabInstance:
     - target: {fileID: 6596675415925804959, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: maxLeftRotationAngle
-      value: 45
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6596675415925804959, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: maxRightRotationAngle
-      value: -45
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 6596675415925804959, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: angleFromRestingPosition
-      value: 47.833473
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6859909413701608367, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
@@ -1266,12 +1266,12 @@ PrefabInstance:
     - target: {fileID: 7817435488457327366, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.019
+      value: 0.522
       objectReference: {fileID: 0}
     - target: {fileID: 7817435488457327366, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.118
+      value: 0.074
       objectReference: {fileID: 0}
     - target: {fileID: 7817435488457327366, guid: 48d591bf6ddaa7a4e933d5c0ba48825b,
         type: 3}

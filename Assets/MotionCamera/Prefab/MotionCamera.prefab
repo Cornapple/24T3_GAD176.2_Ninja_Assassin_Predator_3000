@@ -296,7 +296,7 @@ MonoBehaviour:
   cameraSpeed: 0.5
   angleFromRestingPosition: 0
   maxRightRotation: 0
-  lineLength: 10
+  raycastDistance: 10
   raycastPhysicsLayers:
     serializedVersion: 2
     m_Bits: 4294967295

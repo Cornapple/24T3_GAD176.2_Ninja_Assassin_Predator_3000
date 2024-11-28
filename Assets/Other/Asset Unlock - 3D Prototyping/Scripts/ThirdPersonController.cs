@@ -6,29 +6,27 @@ using UnityEngine;
 
 public class ThirdPersonController : MonoBehaviour
 {
+    #region IMPORTED CONTROLLER
     public Camera GameCamera;
     public float playerSpeed = 2.0f;
     private float JumpForce = 1.0f;
     
-    private CharacterController m_Controller;
+    public CharacterController m_Controller;
     private Animator m_Animator;
     private Vector3 playerVelocity;
-    private bool groundedPlayer;
+    protected bool groundedPlayer;
     private float gravityValue = -9.81f;
 
-    // call the prone script, attaching it to the third person controller
-    public ProneMovement proneMovement;
+    //// call the prone script, attaching it to the third person controller
+    //public ProneController proneMovement;
 
     private void Start()
     {
         m_Controller = gameObject.GetComponent<CharacterController>();
         m_Animator = gameObject.GetComponentInChildren<Animator>();
-
-
-
     }
-
-    void Update()
+    // demonstrates use of protected keyword - cornelius
+    protected void Update()
     {
         groundedPlayer = m_Controller.isGrounded;
         
@@ -68,12 +66,6 @@ public class ThirdPersonController : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
 
         m_Controller.Move(playerVelocity * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.RightShift) && groundedPlayer)
-        {
-            // call the GoProne method
-            proneMovement.GoProne();
-        }
-
+        #endregion
     }
 }

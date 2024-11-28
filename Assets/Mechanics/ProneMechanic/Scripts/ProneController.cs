@@ -11,10 +11,10 @@ using UnityEngine;
 
 ///potentually can be used for: singe responcibility, inheritance, use of namespaces, protected keyword
 #endregion
-public class ProneController : ThirdPersonController
+public class ProneController : CorneliusMovementController
 {
     public GameObject player;
-    public int playerIsProne;
+    public string playerIsProne;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,7 @@ public class ProneController : ThirdPersonController
         if (Input.GetKeyDown(KeyCode.RightShift) && groundedPlayer)
         {
             // call the GoProne method
+            GoProne();
           
         }
     }

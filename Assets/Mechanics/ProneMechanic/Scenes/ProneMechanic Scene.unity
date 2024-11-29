@@ -155,9 +155,9 @@ MonoBehaviour:
   GameCamera: {fileID: 1969211311}
   playerSpeed: 2
   m_Controller: {fileID: 14889177}
-  proneMovement: {fileID: 0}
+  m_Animator: {fileID: 1204042292}
   player: {fileID: 14889169}
-  playerIsProne: 0
+  playerIsProne: 
 --- !u!143 &14889177 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 6196871533986448472, guid: bfd644a7bccd7f54fa7fc3378932bf9c,
@@ -2771,6 +2771,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 207ade7b2f633eb468ca66c61473a72c, type: 3}
+--- !u!95 &1204042292 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 533010806948691335, guid: bfd644a7bccd7f54fa7fc3378932bf9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 545991124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1234701884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4996274348295328, guid: 5c4c8dcc12aea744a8fd42b64f45aced,

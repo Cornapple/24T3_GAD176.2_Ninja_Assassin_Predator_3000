@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,11 +46,11 @@ public class CorneliusMovementController : MonoBehaviour
 
         Vector3 move = forward * input.z + right * input.x;
         move.y = 0;
-
+        
         m_Controller.Move(move * Time.deltaTime * playerSpeed);
 
-            m_Animator.SetFloat("MovementX", input.x); // causing error. not sure why
-            m_Animator.SetFloat("MovementZ", input.z);
+        m_Animator.SetFloat("MovementX", input.x);
+        m_Animator.SetFloat("MovementZ", input.z);
 
         if (input != Vector3.zero)
         {

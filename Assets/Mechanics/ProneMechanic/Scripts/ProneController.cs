@@ -20,10 +20,13 @@ public class ProneController : CorneliusMovementController
     //references player gameobject
     [SerializeField] private GameObject player;
 
+    //refers to the detection script and mechanic
+    public DetectionController detectionController;
+
     public bool playerIsProne;
     public bool pronePlayerSpeed;
 
-    public float newPlayerSpeed = 1.5f;
+    public float newPlayerSpeed  = 1.5f;
 
 
     void Start()
@@ -33,6 +36,7 @@ public class ProneController : CorneliusMovementController
         Debug.Log("ProneController script has been called");
 
         pronePlayerSpeed = false;
+        detectionController.enabled = false;
     }
 
     private void Update()
@@ -65,9 +69,21 @@ public class ProneController : CorneliusMovementController
 
             //diactivates enemies ability to see the player (probably with another script called here)
             //trigger camera somehow needs to be disabled
-
+            cameraTrigger.enabled = false;
+            Debug.Log("Camera Trigger is disabled");
+           
             // slows player down
             pronePlayerSpeed = true;
+            if (playerIsProne == true)
+            {
+                Debug.Log("playerIsProne == true");
+            }
+
+            detectionController.enabled = true;
+        }
+        else
+        {
+            return;
         }
     }
 

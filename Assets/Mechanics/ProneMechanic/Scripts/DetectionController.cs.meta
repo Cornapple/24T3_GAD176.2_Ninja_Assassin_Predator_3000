@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - player: {instanceID: 0}
+  - player: {fileID: 100064, guid: e789208cc0d30394583b7dff5534029e, type: 3}
   - mainCamera: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}

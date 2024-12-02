@@ -2,6 +2,8 @@ using Stealth.Framework.Motion.Camera;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.Android;
 
 
 #region Script LO's
@@ -26,17 +28,24 @@ public class ProneController : CorneliusMovementController
     public bool playerIsProne;
     public bool pronePlayerSpeed;
 
+    public TMPro.TextMeshPro proneText;
+
     public float newPlayerSpeed  = 1.5f;
 
 
     void Start()
     {
+        //detectionController.enabled = false;
         playerIsProne = false;
+
         //indicates the jump from CorneliusMovementController to ProneController
         Debug.Log("ProneController script has been called");
-
         pronePlayerSpeed = false;
-        detectionController.enabled = false;
+
+        if (cameraTrigger != null)
+        {
+            cameraTrigger.enabled = true;
+        }
     }
 
     private void Update()
@@ -63,13 +72,24 @@ public class ProneController : CorneliusMovementController
        
         if (playerIsProne == true)
         {
+            //calls the detectioncontroller script
+            if (detectionController != null)
+            {
+                detectionController.enabled = true;
+                detectionController.Detect();
+                Debug.Log("Detect method has been called");
+            }
+
             Debug.Log("Player is Prone");
             // transform player to lower level from third person controller
             player.transform.localScale = new Vector3(0, 0.5f, 0);
 
             //diactivates enemies ability to see the player (probably with another script called here)
             //trigger camera somehow needs to be disabled
-            cameraTrigger.enabled = false;
+            if (cameraTrigger == true)
+            {
+                cameraTrigger.enabled = false;
+            }
             Debug.Log("Camera Trigger is disabled");
            
             // slows player down
@@ -77,9 +97,7 @@ public class ProneController : CorneliusMovementController
             if (playerIsProne == true)
             {
                 Debug.Log("playerIsProne == true");
-            }
-
-            detectionController.enabled = true;
+            } 
         }
         else
         {

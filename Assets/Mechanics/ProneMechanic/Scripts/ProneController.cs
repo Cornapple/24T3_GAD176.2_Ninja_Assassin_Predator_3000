@@ -11,13 +11,12 @@ using UnityEngine.Android;
 ///debugging, multiple functions, multiple classes, commenting, folder tructure,  <summary>
 ///serialized field, use of geometry and vector
 ///
-
 ///potentually can be used for: singe responcibility, inheritance, use of namespaces, protected keyword
 #endregion
 public class ProneController : CorneliusMovementController
 {
     //call camera trigger script
-    public CameraTrigger cameraTrigger;
+    private CameraTrigger cameraTrigger;
 
     //references player gameobject
     [SerializeField] private GameObject player;
@@ -25,22 +24,23 @@ public class ProneController : CorneliusMovementController
     //refers to the detection script and mechanic
     public DetectionController detectionController;
 
-    public bool playerIsProne;
-    public bool pronePlayerSpeed;
+    private bool playerIsProne;
+    private bool pronePlayerSpeed;
+    private float newPlayerSpeed = 1.5f;
 
-    public TMPro.TextMeshPro proneText;
-
-    public float newPlayerSpeed  = 1.5f;
-
+    public TextMeshProUGUI proneText;
 
     void Start()
     {
+
+        Debug.Log("Script is declared = " + detectionController);
         //detectionController.enabled = false;
         playerIsProne = false;
 
         //indicates the jump from CorneliusMovementController to ProneController
         Debug.Log("ProneController script has been called");
         pronePlayerSpeed = false;
+        detectionController = null;
 
         if (cameraTrigger != null)
         {
@@ -48,7 +48,7 @@ public class ProneController : CorneliusMovementController
         }
     }
 
-    private void Update()
+    private new void Update()
     {
         base.Update();
 
@@ -69,7 +69,8 @@ public class ProneController : CorneliusMovementController
     {
         playerIsProne = true;  
         Debug.Log("GoProne method has been called from " + gameObject.name);
-       
+        proneText.SetText("You have gone prone");
+
         if (playerIsProne == true)
         {
             //calls the detectioncontroller script
@@ -79,6 +80,8 @@ public class ProneController : CorneliusMovementController
                 detectionController.Detect();
                 Debug.Log("Detect method has been called");
             }
+
+
 
             Debug.Log("Player is Prone");
             // transform player to lower level from third person controller
@@ -99,13 +102,7 @@ public class ProneController : CorneliusMovementController
                 Debug.Log("playerIsProne == true");
             } 
         }
-        else
-        {
-            return;
-        }
     }
-
-
     //abstract method, changes player speed
 
 }

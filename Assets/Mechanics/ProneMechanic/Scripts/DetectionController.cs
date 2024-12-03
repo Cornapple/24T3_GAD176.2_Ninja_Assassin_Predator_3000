@@ -6,7 +6,7 @@ using TMPro;
 
 public class DetectionController : ProneController
 {
-    protected RaycastHit seen;
+    protected RaycastHit raycast;
     public GameObject player;
     public Camera mainCamera;
 
@@ -15,7 +15,7 @@ public class DetectionController : ProneController
     // Start is called before the first frame update
     void Start()
     {
-        
+        detectionController.enabled = false;
     }
 
     // Update is called once per frame

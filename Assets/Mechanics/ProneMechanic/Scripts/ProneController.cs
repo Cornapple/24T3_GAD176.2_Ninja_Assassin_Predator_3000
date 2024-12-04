@@ -19,9 +19,9 @@ public class ProneController : CorneliusMovementController
     private CameraTrigger cameraTrigger;
 
     //references player gameobject
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject player; //evidence of [SerialiseField]
 
-    //refers to the detection script and mechanic
+    ////refers to the detection script and mechanic
     public DetectionController detectionController;
 
     private bool playerIsProne;
@@ -32,15 +32,13 @@ public class ProneController : CorneliusMovementController
 
     void Start()
     {
-
-        Debug.Log("Script is declared = " + detectionController);
         //detectionController.enabled = false;
         playerIsProne = false;
 
         //indicates the jump from CorneliusMovementController to ProneController
         Debug.Log("ProneController script has been called");
         pronePlayerSpeed = false;
-        detectionController = null;
+        //detectionController = null;
 
         if (cameraTrigger != null)
         {
@@ -51,21 +49,17 @@ public class ProneController : CorneliusMovementController
     private new void Update()
     {
         base.Update();
-
         if (Input.GetKeyDown(KeyCode.LeftShift)/* && groundedPlayer*/)
         {
             // call the GoProne method
             GoProne();
         }
-
         if (pronePlayerSpeed == true && playerIsProne == true)
         {
             playerSpeed = newPlayerSpeed;
         }
     }
-
-    // Update is called once per frame
-    public void GoProne()
+    public void GoProne() //evidence of single responcibility
     {
         playerIsProne = true;  
         Debug.Log("GoProne method has been called from " + gameObject.name);
@@ -73,36 +67,24 @@ public class ProneController : CorneliusMovementController
 
         if (playerIsProne == true)
         {
-            //calls the detectioncontroller script
-            if (detectionController != null)
-            {
-                detectionController.enabled = true;
-                detectionController.Detect();
-                Debug.Log("Detect method has been called");
-            }
-
-
-
             Debug.Log("Player is Prone");
             // transform player to lower level from third person controller
             player.transform.localScale = new Vector3(0, 0.5f, 0);
 
             //diactivates enemies ability to see the player (probably with another script called here)
-            //trigger camera somehow needs to be disabled
             if (cameraTrigger == true)
             {
                 cameraTrigger.enabled = false;
+                Debug.Log("Camera Trigger is disabled");
             }
-            Debug.Log("Camera Trigger is disabled");
-           
             // slows player down
             pronePlayerSpeed = true;
             if (playerIsProne == true)
             {
                 Debug.Log("playerIsProne == true");
             } 
+            //calls the detect method from the DetectionController script
+            detectionController.Detect();
         }
     }
-    //abstract method, changes player speed
-
 }

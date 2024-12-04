@@ -37,7 +37,7 @@ public class DetectionController : ProneController
         {
             targetPoint = hit.point;
             Debug.Log("traget point hit");
-            Debug.Log("You have hit " + tag);
+            Debug.LogWarning("You have hit " + hit.collider.gameObject);
         }
         else
         {

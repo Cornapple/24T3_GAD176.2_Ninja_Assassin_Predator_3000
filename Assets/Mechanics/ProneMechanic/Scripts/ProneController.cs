@@ -58,6 +58,12 @@ public class ProneController : CorneliusMovementController
         {
             playerSpeed = newPlayerSpeed;
         }
+
+        if (playerIsProne == true)
+        {
+            //calls the detect method from the DetectionController script
+            detectionController.Detect();
+        }
     }
     public void GoProne() //evidence of single responcibility
     {
@@ -83,8 +89,7 @@ public class ProneController : CorneliusMovementController
             {
                 Debug.Log("playerIsProne == true");
             } 
-            //calls the detect method from the DetectionController script
-            detectionController.Detect();
+            
         }
     }
 }

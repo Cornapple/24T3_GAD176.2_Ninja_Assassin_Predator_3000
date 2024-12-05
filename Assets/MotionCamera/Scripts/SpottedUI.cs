@@ -21,9 +21,12 @@ public class SpottedUI : MonoBehaviour
     {
         if (triggerSpotted)
         {
+            Debug.Log("UI Should be SPOTTED");
+
             UI_Spotted.text = "SPOTTED";
+
         }
-        else
+        if (!triggerSpotted)
         {
             UI_Spotted.text = "HIDDEN";
         }

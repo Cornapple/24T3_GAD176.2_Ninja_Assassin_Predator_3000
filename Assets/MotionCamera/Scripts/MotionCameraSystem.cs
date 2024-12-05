@@ -146,11 +146,13 @@ namespace Stealth.Framework.Motion.Camera
 
                     detectedTrigger = true;
 
-                    UI_Spotted.triggerSpotted = true;
+                    UI_Spotted.triggerSpotted = true; // this bool allows the spotted UI to change to "SPOTTED"
+
+                    Debug.Log("UI should change");
 
                     DetectionEvent.OnDetectionEvent?.Invoke(); // calling custom event once trigger has been found
                 }
-                else
+                if (!cameraFound.transform.GetComponent<CameraTrigger>())
                 {
 
                     UI_Spotted.triggerSpotted = false;

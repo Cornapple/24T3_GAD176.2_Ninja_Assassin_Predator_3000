@@ -83,8 +83,10 @@ namespace Stealth.Framework.Motion.Camera
 
             if (UI_Spotted == null)
             {
-                UI_Spotted = FindObjectOfType<SpottedUI>();
+                
+                UI_Spotted = FindObjectOfType<SpottedUI>(); // finds the reference for "SpottedUI" script
             }
+           
         }
 
         void Update()
@@ -146,20 +148,19 @@ namespace Stealth.Framework.Motion.Camera
 
                     detectedTrigger = true;
 
-                    UI_Spotted.triggerSpotted = true; // this bool allows the spotted UI to change to "SPOTTED"
-
-                    Debug.Log("UI should change");
-
                     DetectionEvent.OnDetectionEvent?.Invoke(); // calling custom event once trigger has been found
+
+                    if (!UI_Spotted.MotionCamerasInScene.Contains(gameObject)) // this parameter makes sure that the same camera is not added to the list multiple times
+                    {
+                        UI_Spotted.MotionCamerasInScene.Add(this.gameObject); // adds this object to a list of motion camera objects
+                    }
                 }
-                if (!cameraFound.transform.GetComponent<CameraTrigger>())
+                else
                 {
-
-                    UI_Spotted.triggerSpotted = false;
-
-                    detectedTrigger = false;
-
+                    UI_Spotted.MotionCamerasInScene.Remove(this.gameObject); // removes this object from a list of motion camera objects
                 }
+
+
 
             }
         }

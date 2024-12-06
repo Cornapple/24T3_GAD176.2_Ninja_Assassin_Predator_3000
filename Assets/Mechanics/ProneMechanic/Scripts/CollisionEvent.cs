@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,17 +7,16 @@ using UnityEngine.Events;
 
 public class CollisionEvent : MonoBehaviour
 {
-    [SerializeField] private UnityEvent onTriggerEnter;
+    public static CollisionEvent current;
 
-    public BoxPhysics boxPhysics;
-    public OnTriggerEnter triggerEnter;
-    // Start is called before the first frame update
-    public void OnTriggerEnter(Collider other)
+    private void Awake()
     {
-        if(triggerEnter != null)
-        { 
-            boxPhysics.ApplyForce();
-        }
+        current = this;
+    }
 
+    public event Action onTriggerEnter;
+    public void OnBoxTriggerEnter()
+    {
+        onTriggerEnter();
     }
 }

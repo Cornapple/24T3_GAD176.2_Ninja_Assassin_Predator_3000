@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Ramp
   - Stairs
+  - Event Trigger
   layers:
   - Default
   - TransparentFX

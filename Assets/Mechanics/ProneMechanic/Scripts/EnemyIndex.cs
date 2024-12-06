@@ -8,7 +8,6 @@ using UnityEngine;
 namespace ScriptableObjects
 {
     [CreateAssetMenu(fileName = "New Enemy", menuName = "Create New Enemy", order = 0)]
-
     public class EnemyIndex : ScriptableObject //evidence of using scriptable object
     {
         public string enemyName;

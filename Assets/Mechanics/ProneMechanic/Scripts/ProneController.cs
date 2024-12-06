@@ -34,12 +34,10 @@ public class ProneController : CorneliusMovementController
     {
         //detectionController.enabled = false;
         playerIsProne = false;
-
         //indicates the jump from CorneliusMovementController to ProneController
         Debug.Log("ProneController script has been called");
         pronePlayerSpeed = false;
         //detectionController = null;
-
         if (cameraTrigger != null)
         {
             cameraTrigger.enabled = true;
@@ -58,7 +56,6 @@ public class ProneController : CorneliusMovementController
         {
             playerSpeed = newPlayerSpeed;
         }
-
         if (playerIsProne == true)
         {
             //calls the detect method from the DetectionController script
@@ -70,7 +67,6 @@ public class ProneController : CorneliusMovementController
         playerIsProne = true;  
         Debug.Log("GoProne method has been called from " + gameObject.name);
         proneText.SetText("You have gone prone");
-
         if (playerIsProne == true)
         {
             Debug.Log("Player is Prone");
@@ -89,7 +85,6 @@ public class ProneController : CorneliusMovementController
             {
                 Debug.Log("playerIsProne == true");
             } 
-            
         }
     }
 }

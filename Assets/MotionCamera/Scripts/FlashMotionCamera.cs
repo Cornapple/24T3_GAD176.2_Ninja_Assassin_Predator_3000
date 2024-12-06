@@ -27,7 +27,7 @@ namespace Stealth.Framework.Motion.Camera
             ExplodeObject();
         }
 
-        public void CameraFlash()
+        private void CameraFlash()
         {
             if (detectedTrigger == true)
             {

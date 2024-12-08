@@ -142,10 +142,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameCamera: {fileID: 1969211311}
   playerSpeed: 2
+  JumpForce: 1
   m_Controller: {fileID: 14889177}
   m_Animator: {fileID: 1204042292}
+  playerVelocity: {x: 0, y: 0, z: 0}
+  groundedPlayer: 0
+  gravityValue: -9.81
+  cameraTrigger: {fileID: 0}
   player: {fileID: 14889169}
   detectionController: {fileID: 113892088}
+  playerIsProne: 0
+  pronePlayerSpeed: 0
+  newPlayerSpeed: 1.5
   proneText: {fileID: 1811937322}
 --- !u!143 &14889177 stripped
 CharacterController:
@@ -405,10 +413,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameCamera: {fileID: 1969211311}
   playerSpeed: 2
+  JumpForce: 1
   m_Controller: {fileID: 14889177}
   m_Animator: {fileID: 1204042292}
+  playerVelocity: {x: 0, y: 0, z: 0}
+  groundedPlayer: 0
+  gravityValue: -9.81
+  cameraTrigger: {fileID: 0}
   player: {fileID: 1092655067}
   detectionController: {fileID: 113892088}
+  playerIsProne: 0
+  pronePlayerSpeed: 0
+  newPlayerSpeed: 1.5
   proneText: {fileID: 1811937322}
   mainCamera: {fileID: 1969211311}
   viewPoint: {fileID: 1668730786}
@@ -1049,6 +1065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 348397283}
+  ShootSpeed: 1000
 --- !u!4 &348729372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4079024185925350, guid: 207ade7b2f633eb468ca66c61473a72c,
@@ -5111,10 +5128,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameCamera: {fileID: 1969211311}
   playerSpeed: 2
+  JumpForce: 1
   m_Controller: {fileID: 14889177}
   m_Animator: {fileID: 1204042292}
+  playerVelocity: {x: 0, y: 0, z: 0}
+  groundedPlayer: 0
+  gravityValue: -9.81
+  cameraTrigger: {fileID: 0}
   player: {fileID: 1092655067}
   detectionController: {fileID: 113892088}
+  playerIsProne: 0
+  pronePlayerSpeed: 0
+  newPlayerSpeed: 1.5
   proneText: {fileID: 1811937322}
 --- !u!4 &1494011849
 Transform:
@@ -5771,6 +5796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b3607128a69be41be78f15759003b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxController: {fileID: 0}
 --- !u!4 &1859758602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4278086060124854, guid: 9e2b0132726d5064bab97974d8aac777,
